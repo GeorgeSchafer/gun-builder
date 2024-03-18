@@ -1,4 +1,4 @@
-import { assets } from '../../env.js'
+import { assets } from './env.js'
 import { gun_parts } from './json/gun_parts.js'
 import {
     Config as Configuration,
@@ -9,7 +9,7 @@ import {
     Frame,
     SquareFrame,
     Img,
-    SpriteSheet,
+    SpriteSheet
 } from './PhaserHelpers/Constants.mjs'
 
 
@@ -18,10 +18,10 @@ let sceneA
 let configure
 let game
 gun_parts.image = assets + gun_parts.image
-console.log('gun-parts:\n', gun_parts)
 const view = new View(512, 382)
+const gunPartImg = new Img('gunPart', gun_parts.image)
 const elements = {
-    ASSET: new Img(assets + 'FILENAME')
+    gunParts: new SpriteSheet('gunParts', gun_parts.image, new Frame(32,64))
 }
 
 const player = null
@@ -31,10 +31,12 @@ function preload() {
     for(let [key] of Object.entries(elements)){
         elements[key].preload(activeScene)
     }
+    gunPartImg.preload(activeScene)
 }
 
 function create() {
-    elements.ASSET.create(activeScene, view.center().x, view.center())
+    elements.gunParts.createImg(activeScene, view.center().x, view.center())
+    gunPartImg.create(activeScene, view.center().x, view.center().y)
 }
 
 function update() {  
