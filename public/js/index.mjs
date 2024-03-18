@@ -1,5 +1,7 @@
+import 'dotenv/config'
+import { gun_parts } from './json/gun_parts.js'
 import {
-    Config,
+    Config as Configuration,
     Scene,
     View,
     Player,
@@ -8,18 +10,16 @@ import {
     SquareFrame,
     Img,
     SpriteSheet,
-} from '../Constants.mjs'
-import {
-    Platform,
-    physics,
-} from '../Platformer/index.mjs'
+} from './PhaserHelpers/Constants.mjs'
 
 
 let activeScene
 let sceneA
-let config
+let configure
 let game
-const assets = '../js/assets/'
+const assets = process.env.ASSETS
+gun_parts.image = assets + gun_parts.image
+console.log('gun-parts:\n', gun_parts)
 const view = new View(512, 382)
 const elements = {
     ASSET: new Img(assets + 'FILENAME')
@@ -43,5 +43,10 @@ function update() {
 }
 
 sceneA = new Scene(preload, create, update)
-config = new Config(view, physics, sceneA)
-game = new Phaser.Game(config)
+configure = new Configuration(view, physics, sceneA)
+game = new Phaser.Game(configure)
+
+export {
+    assets,
+    gun_parts
+}
