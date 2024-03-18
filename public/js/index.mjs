@@ -17,7 +17,7 @@ let activeScene
 let sceneA
 let configure
 let game
-gun_parts.image = assets + gun_parts.image
+gun_parts.image = '../assets/gun_parts.png' + gun_parts.image
 const view = new View(512, 382)
 const gunPartImg = new Img('gunPart', gun_parts.image)
 const elements = {
