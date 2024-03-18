@@ -1,0 +1,28 @@
+{
+  "name": "phaserjsboilerplate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "mocha test --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorgeSchafer/PhaserJSBoilerplate.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "template",
+    "phaserjs"
+  ],
+  "author": "GeorgeSchafer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GeorgeSchafer/PhaserJSBoilerplate/issues"
+  },
+  "homepage": "https://github.com/GeorgeSchafer/PhaserJSBoilerplate#readme",
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "mocha": "^10.3.0"
+  }
+}
