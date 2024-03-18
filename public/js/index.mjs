@@ -1,4 +1,4 @@
-import 'dotenv/config'
+import { assets } from '../../env.js'
 import { gun_parts } from './json/gun_parts.js'
 import {
     Config as Configuration,
@@ -17,7 +17,6 @@ let activeScene
 let sceneA
 let configure
 let game
-const assets = process.env.ASSETS
 gun_parts.image = assets + gun_parts.image
 console.log('gun-parts:\n', gun_parts)
 const view = new View(512, 382)
@@ -43,7 +42,7 @@ function update() {
 }
 
 sceneA = new Scene(preload, create, update)
-configure = new Configuration(view, physics, sceneA)
+configure = new Configuration(view, null, sceneA)
 game = new Phaser.Game(configure)
 
 export {
