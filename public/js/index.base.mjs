@@ -3,6 +3,7 @@ import {
     Scene,
     View,
     Player,
+    Typeface,
     Frame,
     SquareFrame,
     Img,
@@ -21,8 +22,7 @@ let game
 const assets = '../js/assets/'
 const view = new View(512, 382)
 const elements = {
-    sky: new Img(assets + 'sky'),
-    star: new Img(assets + 'star'),
+    ASSET: new Img(assets + 'FILENAME')
 }
 
 const player = null
@@ -35,8 +35,7 @@ function preload() {
 }
 
 function create() {
-    elements.sky.create(activeScene, view.centerX(), view.centerY())
-    elements.star.create(activeScene, view.centerX(), view.centerY())
+    elements.ASSET.create(activeScene, view.center().x, view.center())
 }
 
 function update() {  
