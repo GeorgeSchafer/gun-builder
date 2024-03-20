@@ -19,7 +19,7 @@ let configure
 let game
 gun_parts.image = assets + gun_parts.image
 const view = new View(512, 382)
-cd const elements = {
+const elements = {
     gunParts: new SpriteSheet('gunParts', gun_parts.image, new Frame(32,64))
 }
 
