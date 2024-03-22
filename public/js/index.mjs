@@ -1,5 +1,7 @@
-import { assets } from './env.js'
-import { gun_parts } from './json/gun_parts.js'
+import {
+    assets,
+    gun_parts
+} from './env.js'
 import {
     Config as Configuration,
     // Scene,
